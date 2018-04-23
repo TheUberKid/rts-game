@@ -1,0 +1,24 @@
+{
+  "name": "rts-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zeki Xu",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "compression": "^1.7.2",
+    "connect-timeout": "^1.9.0",
+    "express": "^4.16.3",
+    "express-minify": "^1.0.0",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.0.15",
+    "sat": "^0.7.0",
+    "socket.io": "^2.1.0",
+    "winston": "^2.4.2"
+  }
+}

@@ -4,6 +4,8 @@ var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
 
+var io = require('socket.io');
+
 var compression = require('compression');
 var minify = require('express-minify');
 app.use(compression());
@@ -15,9 +17,6 @@ if(args[0] === 'debug'){
 } else {
   app.use(minify());
 }
-
-var async = require('async');
-var mongoose = require('mongoose');
 
 // serve client files and only client files on request
 app.get('/', function(req, res){
@@ -36,3 +35,6 @@ function haltOnTimedout(req, res, next){
 // start server
 serv.listen(process.env.PORT || 5000);
 console.log('Server started');
+
+var Game = new require('modules/game')();
+Game.init(io);
